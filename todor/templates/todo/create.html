@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="contenedor-formulario">
+
+        <h1 class="titulo-formulario">{% block title %}Ingresar Tarea{% endblock %}</h1>
+
+        <form action="" method="POST">
+
+            <div class="grupo-campo">
+                <label class="etiqueta" for="title">Título</label>
+                <input class="campo-texto" type="text" id="title" name="title" required>
+            </div>
+            <div class="grupo-campo">
+                <label class="etiqueta" for="desc">Descripción:</label>
+                <textarea class="area-texto" id="desc" name="desc" rows="3"></textarea>
+            </div>
+            <br>
+            <div class="grupo-botones">
+                <input class="boton boton-guardar" type="submit" value="Guardar">
+                <a class="boton boton-cancelar" href="{{url_for('todo.index')}}">Cancelar</a>
+            </div>
+        </form>
+    </section>
+{% endblock %}

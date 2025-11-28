@@ -1,0 +1,364 @@
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /*1REM es 10 px*/
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body{
+      font-family: "Raleway", sans-serif;
+      font-size: 1.6rem;
+      line-height: 2;
+}
+
+/**Globales*/
+h1{
+    font-size: 5rem;
+}
+h2{
+    font-size: 4rem;
+}
+h3{
+    font-size: 3rem;
+}
+h1, h2, h3{
+    font-family: "Playfair Display", serif;
+    margin: 0 0 5rem 0;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+img{
+    max-width: 100%; /*la imagen toma el tamano del contenedor  conten 300 imagen 600 */
+    display: block;
+}
+
+/*UTILIDADES*/
+.max-width{
+    max-width: 30rem;
+    height: 5rem;
+}
+
+.btn{
+    background: #F9A8D4;
+    display: block;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    transition: background .3s ease-out;
+    border-radius: 5px;
+    text-align: center;
+}
+.btn:hover{
+    background: #755085;
+}
+
+
+/*Navegacion*/
+.nav-principal{
+    
+    padding: 2rem 0;
+    display: flex;
+    flex-direction:row; /*cuatro posibles valores*/
+    /*en direccion row justify-content es para alinear horizontalmente y align-items es vertical*/
+    justify-content: space-between; /*tiene varios valores*/
+    align-items: center; /*tiene varios valores*/
+    background-color: #93C5FD;
+}
+.nav-principal a{
+    color: #fff;
+    font-size: 2.5rem;
+}
+.nav-principal a:hover{
+    color: #000000f8;
+}
+.nav-principal .nav-link:nth-child(1){
+    margin-right: 3rem;
+}
+
+
+/*Index*/
+.contenido{
+    text-align: center;
+    padding: 0 2rem;
+}
+.contenido h1{
+    margin-bottom: 0;
+}
+.contenido .desc{
+    margin-top: 0;
+}
+.contenido .botones{
+    display: flex;
+    justify-content: center;
+}
+.contenido .btn{
+    background: #C4B5FD;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    transition: background .3s ease-out;
+    border-radius: 5px;
+}
+.contenido .btn:nth-child(1){
+    margin-right: 3rem;
+}
+.contenido .btn:hover{
+    background: #373a30;
+}
+
+
+/*Registrar*/
+.formulario{
+    max-width: 40rem;
+    margin: 0 auto;
+}
+.formulario fieldset{
+    border: 3px solid rgb(0, 0, 0);
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+}
+.formulario legend{
+    background: #C4B5FD;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+}
+.campo label{
+    flex-basis: 16rem;
+}
+.registar{
+  display: flex;
+  justify-content: center;
+}
+
+/*Mensaje de error cuando ya se encuentra registrado un usuario*/
+.container-error{
+    background-color: #a07676;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.container-error p{
+    text-align: center;
+    margin: 0;
+    font-size: 2rem;
+    color: #530b0b;
+}
+
+/*TAREAS*/
+/*.nav-tarea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+.nav-tarea h1{
+    margin-bottom: 0;
+    text-align: center;
+}*/
+
+.nav-tarea{
+    position: relative;          /* Necesario para centrar el título */
+    display: flex;
+    justify-content: flex-end;   /* El botón se queda a la derecha */
+    align-items: center;
+    padding: 1rem 4rem;
+}
+
+/* Centrar el título sin afectar el botón */
+.nav-tarea h1{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-table;   /* esto la mantiene del tamaño natural */
+}
+
+.contenido-tareas{
+    text-align: center;   /* centra inline-table */
+}
+
+
+
+/* Contenedor de la tabla centrado */
+.contenido-tareas {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Tabla */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', sans-serif;
+    background: #FFF7ED; /* crema suave */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Encabezados */
+table thead th {
+    background: #F9A8D4; /* rosa pastel */
+    color: #4a4a4a;
+    padding: 12px 18px;
+    font-weight: bold;
+    font-size: 15px;
+    border-bottom: 2px solid #f1c7dd;
+}
+
+/* Celdas del cuerpo */
+table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #f0e6ff;
+    color: #333;
+}
+
+/* Filas alternadas */
+table tbody tr:nth-child(even) {
+    background: #fdf2fb; /* rosa muy clarito */
+}
+
+table tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+/* Hover suave */
+table tbody tr:hover {
+    background: #C4B5FD; /* lavanda */
+    color: white;
+    transition: 0.2s;
+}
+
+/* Links de Editar / Eliminar */
+table a {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+/* Botón editar */
+table a[href*="update"] {
+    background: #93C5FD; /* azul pastel */
+}
+
+/* Botón eliminar */
+table a[href*="delete"] {
+    background: #F9A8D4; /* rosa pastel */
+}
+
+/* Hover para los botones */
+table a:hover {
+    opacity: 0.8;
+}
+
+
+
+
+
+/* Contenedor */
+.contenedor-formulario {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #FFF7ED; /* crema */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Título */
+.titulo-formulario {
+    color: #C4B5FD; /* lavanda */
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Grupo campo */
+.grupo-campo {
+    margin-bottom: 15px;
+}
+
+/* Etiquetas */
+.etiqueta {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Inputs */
+.campo-texto,
+.area-texto {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #93C5FD; /* azul pastel */
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+}
+
+/* Checkbox */
+.grupo-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+/* Botones */
+.grupo-botones {
+    margin-top: 15px;
+}
+
+.boton {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.boton-guardar {
+    background: #93C5FD;
+}
+
+.boton-cancelar {
+    background: #F9A8D4;
+    color: #000;
+}
+
+.boton:hover {
+    opacity: 0.85;
+}

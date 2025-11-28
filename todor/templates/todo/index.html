@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="contenido-tareas">
+        <nav class="nav-tarea" >
+        <h1>{% block title %} Lista de Tareas {% endblock %}</h1>
+        <a class="btn max-width" href="{{url_for('todo.create')}}">Nuevo</a>
+    </nav>
+
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tareas</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for todo in todos | reverse %}
+            {% if g.user.id == todo.create_by %}
+            <tr>
+                <td>{{todo.title}}</td>
+                <td>{{todo.desc}}</td>
+                <td>{{todo.state}}</td>
+                <td><a href="{{url_for('todo.update', id = todo.id)}}">Editar</a></td>
+                <td><a href="{{url_for('todo.delete', id = todo.id)}}">Eliminar</a></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <nav class="nav-principal">
+        <div class="">
+            <a class="nav-link" href="{{url_for('index')}}">Principal</a>
+        </div>
+        {% if g.user %}
+            <div>
+                <a href="#">{{g.user.username}}</a>
+                <a class="nav-link" href="{{url_for('todo.index')}}">Tareas</a>
+                <a class="nav-link" href="{{url_for('auth.logout')}}">Cerrar Session</a>
+            </div>
+        {% else %}
+        <div>
+            <a class="nav-link" href="{{url_for('auth.register')}}">Registrarse</a>
+            <a class="nav-link" href="{{url_for('auth.login')}}">Iniciar Sesion</a>
+        </div>
+        {% endif %}
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <!--base.html-->
+
+    {% for message in get_flashed_messages() %}
+    <div class="container-error">
+        <p>{{message}}</p>
+    </div>
+    {% endfor %}
+
+
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+
+</body>
+</html>

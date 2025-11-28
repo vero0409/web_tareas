@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}de Inicio{% endblock %}
+
+{% block content%}
+    <div class="contenido">
+        <h1>Bienvenido a nuestra lista de tareas</h1>
+        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quae et. Laboriosam voluptate tempore vel minima asperiores placeat dolores, animi qui eveniet assumenda modi reiciendis dicta necessitatibus amet, sequi fugit.</p>
+        <hr>
+        <p>Tienes una cuenta?</p>
+        <div class="botones">
+            <a class="btn" href="{{url_for('auth.login')}}">Iniciar Sesion</a>
+            <a class="btn" href="{{url_for('auth.register')}}">Registrarse</a>
+        </div>
+    </div>
+    {% endblock %}    

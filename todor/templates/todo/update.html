@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="contenedor-formulario">
+
+        <h3 class="titulo-formulario">{% block title %}Editar Tarea{% endblock %}</h3>
+
+        <form action="" method="post">
+
+            <div class="grupo-campo">
+                <label class="etiqueta" for="title">Titulo:</label>
+                <input class="campo-texto" type="text" id="title" name="title" required value="{{todo.title}}">
+            </div>
+            <div>
+                <label class="etiqueta" for="desc">Descripcion:</label>
+                <textarea class="area-texto" name="desc" id="desc" rows="3">{{ todo.desc }}</textarea>
+            </div>
+            <br>
+            <div class="grupo-campo">
+                <label class="etiqueta" for="state">Completado</label>
+                <input type="checkbox" name="state" id="state" {% if todo.state == true %} checked {% endif %}>
+            </div>
+            <hr>
+            <div class="grupo-checkbox">
+                <input class="boton boton-guardar" type="submit" value="Guardar">
+                <a class="boton boton-cancelar" href="{{url_for('todo.index')}}">Cancelar</a>
+            </div>
+        </form> 
+    </section>
+{% endblock %}
